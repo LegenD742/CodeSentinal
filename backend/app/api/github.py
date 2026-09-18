@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
 from app.github.client import GitHubClient
+from app.github.context import RepositoryContextBuilder
 
 
 router = APIRouter(prefix="/github", tags=["GitHub"])
@@ -52,6 +53,31 @@ def get_pull_request_files(
         repository = f"{owner}/{repo}"
 
         return client.get_pr_diff(
+            repository,
+            pr_number,
+        )
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=str(e),
+        )
+
+
+@router.get(
+    "/repos/{owner}/{repo}/pulls/{pr_number}/context"
+)
+def get_pull_request_context(
+    owner: str,
+    repo: str,
+    pr_number: int,
+):
+    try:
+        builder = RepositoryContextBuilder()
+
+        repository = f"{owner}/{repo}"
+
+        return builder.build_context(
             repository,
             pr_number,
         )
