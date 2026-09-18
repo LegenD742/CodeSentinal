@@ -1,0 +1,96 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment
+.env
+csenv/
+
+# Node
+node_modules/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Local data
+postgres_data/
+redis_data/
+
+.env
+.env.[a-zA-Z]*
+!.env.example
+
+# Exclude local SQLite databases (commonly used during FastAPI development)
+*.db
+*.sqlite3
+
+# ==========================================
+# Python Essentials
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==========================================
+# Virtual Environments
+# ==========================================
+.venv/
+venv/
+ENV/
+env/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ==========================================
+# Testing & Coverage
+# ==========================================
+htmlcov/
+.toml
+.cache
+.pytest_cache/
+.coverage
+.coverage.*
+.hypothesis/
+.pytest_cache/
+cover/
+
+# ==========================================
+# IDEs & Text Editors
+# ==========================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
