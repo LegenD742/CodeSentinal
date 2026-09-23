@@ -1,6 +1,3 @@
--- CodeSentinel database schema
--- Run automatically by the postgres container on first init (docker-entrypoint-initdb.d).
-
 CREATE EXTENSION IF NOT EXISTS vector;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
@@ -101,6 +98,6 @@ CREATE TABLE IF NOT EXISTS code_embeddings (
     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 CREATE INDEX IF NOT EXISTS idx_embeddings_repo ON code_embeddings (repository_id);
--- Approximate nearest-neighbour index (IVFFlat) for cosine similarity search.
+
 CREATE INDEX IF NOT EXISTS idx_embeddings_vector ON code_embeddings
     USING ivfflat (embedding vector_cosine_ops) WITH (lists = 100);

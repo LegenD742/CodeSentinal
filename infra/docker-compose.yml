@@ -1,7 +1,4 @@
-# Only Postgres (with pgvector) and Redis run in Docker. The backend API,
-# Celery worker, and frontend all run natively on your machine (see the
-# README) — this file exists purely so you don't have to install and
-# configure Postgres/Redis by hand.
+
 version: "3.9"
 
 services:
