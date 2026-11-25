@@ -106,6 +106,10 @@ from step 1 — no dedicated terminal needed for them. Ollama also
 typically runs as a background service/app. So 3 terminals is really
 all you need.)
 
+
+ngrok http 8000 
+
+
 ## See it working without GitHub
 
 ```bash
